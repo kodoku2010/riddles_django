@@ -1,21 +1,26 @@
-<h1>Available Riddles</h1>
+{% extends 'base.html' %}
 
-{% if message %}
-  <p><strong>{{ message }}</strong></p>
-{% endif %}
+{% block title %}Available Riddles{% endblock %}
 
-{% if latest_riddles %}
-  
-  <ul>
-    {% for riddle in latest_riddles %}
-      <li>
-        <a href="/riddles_app/{{ riddle.id }}/">
-          {{ riddle.rid_text }}
-        </a>
-      </li>
-    {% endfor %}
-  </ul>
+{% block content %}
+  <div class="container">
+    <h1>Available Riddles</h1>
+    {% if message %}
+      <p><strong>{{ message }}</strong></p>
+    {% endif %}
 
-{% else %}
-  <p>No riddles are available right now.</p>
-{% endif %}
+    {% if latest_riddles %}
+      <ul>
+        {% for riddle in latest_riddles %}
+          <li>
+            <a href="/{{ riddle.id }}/">
+              {{ riddle.rid_title }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>No riddles are available right now.</p>
+    {% endif %}
+  </div>
+{% endblock %}

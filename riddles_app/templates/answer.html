@@ -1,19 +1,27 @@
-<h1>{{ riddle.riddle_text }}</h1>
+{% extends 'base.html' %}
 
-{% if error_message %}
-  <p>
-    <strong>{{ error_message }}</strong>
-  </p>
-{% endif %}
+{% block title %}{{ riddle.riddle_text }}{% endblock %}
 
-<form action="{% url 'riddles_app:answer' riddle.id %}" method="post">
+{% block content %}
+  <div class="container">
+    <h1>{{ riddle.rid_title }}</h1>
+    <h4>{{ riddle.rid_text }}</h4>
 
-  {% csrf_token %}
-  {% for option in riddle.option_set.all %}
-    <input type="radio" value="{{ option.id }}" name="option" id="option{{ forloop.counter }}"/>  
-    <label for="option{{ forloop.counter }}">{{ option.text }}</label><br>
-  {% endfor %}
-  <input type="submit" value="Answer" />
+    {% if error_message %}
+      <p>
+        <strong>{{ error_message }}</strong>
+      </p>
+    {% endif %}
 
-</form>
+    <form action="{% url 'riddles_app:answer' riddle.id %}" method="post">
 
+      {% csrf_token %}
+      {% for option in riddle.option_set.all %}
+        <input type="radio" value="{{ option.id }}" name="option" id="option{{ forloop.counter }}"/>  
+        <label for="option{{ forloop.counter }}">{{ option.text }}</label><br>
+      {% endfor %}
+      <input type="submit" value="Answer" />
+
+    </form>
+  </div>
+{% endblock %}

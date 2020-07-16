@@ -1,2 +1,2 @@
 #### Django Riddles Application
-###### Technologies: Django, HTML
+###### Technologies: Django
