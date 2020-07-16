@@ -1,2 +1,3 @@
 #### Django Riddles Application
-###### Technologies: Django
+###### Technologies: Python, Django
+Простое приложение с вопросами по Пайтону
