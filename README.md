@@ -1,6 +1,7 @@
 ### Django Riddles Application
 #### Technologies: Python, Django
 Простое приложение с вопросами по Пайтону
+
 Для запуска приложение локально открываем терминал и выполняем следующие команды:
 
 `git clone https://github.com/kodoku2010/riddles_django.git`
