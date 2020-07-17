@@ -6,6 +6,8 @@
 
 `git clone https://github.com/kodoku2010/riddles_django.git`
 
+`pip install -r requirements.txt`
+
 `python3 manage.py migrate --run-syncdb`
 
 `python3 manage.py makemigrations`
